@@ -3,8 +3,9 @@
 @section('page_title', 'Movies')
 
 @section('main_content')
-    <div class="container">
-        <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="container-fluid">
+      <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-5 g-4">
           @foreach($movies as $movie)
             <div class="col">
                   <div class="card">
@@ -14,13 +15,14 @@
                         <h6>Original title: {{$movie["original_title"]}}</h6>
                         <p class="mb-0">Nationality: {{$movie["nationality"]}}</p>
                         <p class="mb-0">Exit date: {{$movie["date"]}}</p>
-                        <p class="mb-0">Vote: {{$movie["vote"]}}/10</p>
+                        <h1 class="overlay d-flex align-items-center justify-content-center ">Vote: {{$movie["vote"]}}</h1>
                       </div>
                     </div>
                   </div>
             </div>
           @endforeach
         </div>
+    </div>
 
         {{-- @dump($movies[0]->title) --}}
     </div>
